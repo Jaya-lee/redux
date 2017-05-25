@@ -21,20 +21,4 @@ const rootReducer = combineReducers({
     likes:likeReducer
 })
 
-// let defaultState = {
-//     comments:['hello1','hello2'],
-//     likes:0
-//     }
-//
-// function rootReducer(state = defaultState, action) {
-//     switch(action.type){
-//         case 'ADD_COMMENT' : return {...state,comments:[...state.comments,action.comment]}
-//
-//         case 'INCREMENT_LIKE' : return {...state,likes:state.likes+1}
-//
-//         default : return state;
-//     }
-//
-// }
-
 export default rootReducer
