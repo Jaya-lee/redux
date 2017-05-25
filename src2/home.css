@@ -1,0 +1,69 @@
+.app-warp{
+    background: #6f9437;
+    height: 100vh;
+    padding-top: 120px;
+}
+.home-warp{
+    width: 280px;
+    height: 300px;
+    background: white;
+    margin:0 auto;
+    position: relative;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+}
+h2{
+    text-align: center;
+    line-height: 60px;
+}
+.item{
+    width: 200px;
+    margin: 0 auto;
+}
+.item-icon svg{
+    width: 15px;
+    height: 15px;
+
+}
+.item-icon{
+    float: right;
+}
+.post-item{
+    width: 245px;
+    padding-left: 35px;
+    position: absolute;
+    bottom: 0;
+}
+.post-text {
+    height: 40px;
+
+}
+.post-text input{
+    display:inline-block;
+    background: #d8d8d8;
+    border: 0;
+    outline: none;
+    line-height: 20px;
+    margin-top: 10px;
+    float: left;
+}
+.post-text div{
+    float: left;
+    height: 40px;
+    position: relative;
+    left:-10px;
+    cursor: pointer;
+}
+.post-text .icon {
+    width: 40px;
+    height: 40px;
+}.btn{
+    padding-left: 15px;
+}
+.btn div{
+    float: left;
+    margin: 5px 20px;
+    cursor: pointer;
+}
