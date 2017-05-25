@@ -20,12 +20,9 @@ body {
 
 .top {
   height: 400px;
-  background-color: rgb(0, 188, 212);
+  background-color: rgb(0, 188, 212);;
 }
-.all{
-     background-color: rgb(0, 188, 212);
-     padding: 50px 0;
-}
+
 .bottom {
   background-color: #EEEEEE;
 }
@@ -82,9 +79,6 @@ body {
   text-align: center;
   background-color: rgb(242, 244, 246);
   color: rgb(76, 87, 101);
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
 
 .post-body .comment-num {
