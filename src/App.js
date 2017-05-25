@@ -1,41 +1,27 @@
 import React, { Component } from 'react'
-
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import PostBody from './Hello'
-import CommentBox from './Search'
+// import CommentBox from './Search'
 import {Provider }from 'react-redux'
 import store from './redux/store'
-
+// import Baby from './router/baby'
+// import Home from './router/home'
+import Post from './router/post'
 class App extends Component {
-    constructor(){
-        super();
-        this.state={
-            all:''
-        }
-        // this.handleNum=this.handleNum.bind(this)
-
-    }
-    // handleNum(i){
-    //     this.setState({
-    //         all:i
-    //     })
-    // }
-
   render() {
     return (
-        <Provider store={store}>
-          <div>
-            <div className='top clearfix'>
-                {/* <PostBody comment={this.state.all}/> */}
-                <PostBody/>
-            </div>
-            <div className='bottom clearfix'>
-                {/* <CommentBox num={this.handleNum}/> */}
-                <CommentBox/>
-            </div>
-          </div>
-      </Provider>
+        <Router>
+            <Provider store={store}>
+              <div>
+                    <Route exact path='/' component={PostBody}></Route>
+                    <Route path='/:id' component={Post}></Route>
+              </div>
+          </Provider>
+      </Router>
     )
   }
 }
+{/* <PostBody comment={this.state.all}/> */}
+{/* <CommentBox num={this.handleNum}/> */}
 
 export default App

@@ -23,7 +23,8 @@ class CommentBox extends Component {
         e.target.reset()
         if(this.state.input.trim()){
             //发出action
-            store.dispatch({type:'ADD_COMMENT',comment:this.state.input})
+            let id=this.props.match.params.id
+            store.dispatch({type:`ADD_COMMENT${id}`,comment:this.state.input})
 
             this.setState({
                 input:''
@@ -34,17 +35,17 @@ class CommentBox extends Component {
 
     }
   render() {
+      
+      let newComment=this.props.comments[this.props.match.params.id]
     return (
       <div className='comment-box'>
           <div className='search'>
               <ul>
-                 {this.props.comments.map((item,index) =>
+                 {newComment.map((item,index) =>
                  <li className='comment' key={Math.random()}
                 >{item}</li>
             )}
               </ul>
-              {/* <li className='comment' key={Math.random()}>{comments}</li> */}
-
               <form className='comment-form' onSubmit={this.handleSubmit}>
                   <input onChange={this.handleInput}
                       value={this.state.input}
