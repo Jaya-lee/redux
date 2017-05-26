@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import store from './redux/store'
+
 class CommentBox extends Component {
     constructor(){
         super();
@@ -35,7 +36,7 @@ class CommentBox extends Component {
 
     }
   render() {
-      
+
       let newComment=this.props.comments[this.props.match.params.id]
     return (
       <div className='comment-box'>

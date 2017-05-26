@@ -1,23 +1,24 @@
 import React, { Component } from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-import PostBody from './Hello'
-// import CommentBox from './Search'
+import {BrowserRouter as Router, Route,Switch} from 'react-router-dom'
 import {Provider }from 'react-redux'
 import store from './redux/store'
-// import Baby from './router/baby'
-// import Home from './router/home'
-import Post from './router/post'
+import NoMatch from './Nomatch'
+import Post from './Post'
+import Home from './Home'
 class App extends Component {
   render() {
     return (
+        <Provider store={store}>
         <Router>
-            <Provider store={store}>
-              <div>
-                    <Route exact path='/' component={PostBody}></Route>
-                    <Route path='/:id' component={Post}></Route>
-              </div>
-          </Provider>
+
+              <Switch>
+                    <Route exact path='/' component={Home}></Route>
+                    <Route path='/post/:id' component={Post}></Route>
+                    <Route component={NoMatch}></Route>
+              </Switch>
+
       </Router>
+       </Provider>
     )
   }
 }

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import store from '../redux/store'
 
-import PostBody from '../Hello'
-import CommentBox from '../Search'
+import PostBody from '../PostBody'
+import CommentBox from '../CommentBox'
 import {Link,Route} from 'react-router-dom'
 
 class Post extends Component{
@@ -12,7 +12,7 @@ class Post extends Component{
         let num=
         Object.keys(this.props.comments).indexOf(this.props.match.params.id)
         store.dispatch({type:'CHANGE_POST',post:num})
-        console.log(this.props);
+        // console.log(this.props);
     }
     handleClick(){
         store.dispatch({type:'ALL'})
@@ -32,7 +32,7 @@ class Post extends Component{
     )
 }
 }
-const mapStateToProps =(state) =>({ //此时state里面是状态树store 必须返回一个对象
+const mapStateToProps =(state) =>({ 
     comments:state.comments,
     likes:state.likes,
     posts:state.posts
