@@ -1,14 +1,13 @@
 import { combineReducers } from 'redux'
 
-let comments = {
-  1: ['hello1', 'world1'],
-  2: ['hello2', 'world2','hello3','hello4']
-}
-
+let comments = []
 function commentReducer(state= comments, action) {
+
   switch (action.type) {
+     case 'COMMENT' : return action.comments
     case 'ADD_COMMENT':
-      return {...state, [action.postId]:[...state[action.postId],action.comment]}
+    //   return {...state, [action.postId]:[...state[action.postId],action.comment]}
+    return [...state,{commentBody:action.comment,postId:action.postId}]
     default:
       return state
   }

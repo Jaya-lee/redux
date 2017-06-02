@@ -6,6 +6,12 @@ import NoMatch from './Nomatch'
 import Post from './Post'
 import Home from './Home'
 class App extends Component {
+    // handleClick(){
+    //     store.dispatch({type:'ADD'})
+    //     store.subscribe(function(){
+    //         console.log(store.getState());
+    //     })
+    // }
   render() {
     return (
         <Provider store={store}>
@@ -19,6 +25,9 @@ class App extends Component {
 
       </Router>
        </Provider>
+    // <div style={{width:'300px',height:'300px',background:'teal'}}
+    //     onClick={this.handleClick.bind(this)}>
+    // </div>
     )
   }
 }

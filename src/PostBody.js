@@ -1,13 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import store from './redux/store'
+import {fetchComments} from './actions/commentAction'
 
 class PostBody extends React.Component {
   constructor() {
     super()
     this.handleClick = this.handleClick.bind(this)
   }
-
+  componentWillMount(){
+        this.props.fetchComments()
+  }
   handleClick() {
     store.dispatch({type: 'INCREMENT_LIKES',postId:this.props.id})
   }
@@ -20,8 +23,10 @@ class PostBody extends React.Component {
         <div onClick={this.handleClick} className="likes-num num">
           赞{this.props.posts[this.props.id].likes}
         </div>
+
         <div className="comment-num num">
-          评论{this.props.comments[this.props.id].length}
+          评论
+          {this.props.comments.filter(item => item.postId===this.props.id).length}
         </div>
       </div>
     )
@@ -34,5 +39,4 @@ const mapStateToProps = (state) => (
     posts: state.posts
   }
 )
-
-export default connect(mapStateToProps)(PostBody)
+export default connect(mapStateToProps,{fetchComments})(PostBody)

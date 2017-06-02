@@ -1,8 +1,9 @@
-import {createStore} from 'redux'
+import {createStore,applyMiddleware} from 'redux'
 
+import thunk from 'redux-thunk'
 import rootReducer from './reducer'
 
-
-let store = createStore(rootReducer)
+const store = createStore(rootReducer, applyMiddleware(thunk)) //加载thunk
+// let store = createStore(reducer)
 
 export default store
