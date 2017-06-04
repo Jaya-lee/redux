@@ -7,7 +7,7 @@ class CommentBox extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentWillMount(){
-        this.props.fetchComments()
+    this.props.fetchComments()
   }
   handleSubmit(e) {
     e.preventDefault()
@@ -18,7 +18,7 @@ class CommentBox extends React.Component {
   }
 
   render() {
-     
+
     return(
       <div className="comment-box">
          { this.props.comments.filter( item =>

@@ -9,7 +9,12 @@ const fetchComments =()=>(
 
  const addComment = (comment,postId) =>(
      dispatch =>{
-        dispatch({type:'ADD_COMMENT',comment,postId})
+        const data={
+            commentBody:comment,
+            postId
+        }
+        axios.post('http://redux-hello.haoduoshipin.com/comments',data).then(
+        dispatch({type:'ADD_COMMENT',comment,postId}))
     }
 )
 export {fetchComments,addComment}
